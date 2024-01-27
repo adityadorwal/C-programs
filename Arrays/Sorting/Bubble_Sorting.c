@@ -2,7 +2,7 @@
 // Inputing Elements Of the Array
 int* input(int arr[],int size)
 {
-    printf("Enter the Elements of the Array:-\n");
+    printf("Enter the Elements of the Array:- \n");
     for(int i=0;i<size;i++)
     {
         printf("-> ");
