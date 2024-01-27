@@ -11,23 +11,22 @@ int* input(int arr[],int size)
     return(arr);
 }
 // Binary Search
-int Binary(int arr[],int size,int search)
+int Binary(int arr[],int start,int end,int search)
 {
-    int mid,start=0,end=size-1;
-    while(end>=start)
+    if(end>=start)
     {
-        mid=(start+end)/2;
+        int mid=(start+end)/2;
         if(arr[mid]==search)
         {
             return(1);
         }
         else if(arr[mid]<search)
         {
-            start=mid+1;
+            return Binary(arr,mid+1,end,search);
         }
         else
         {
-            end=mid-1;
+            return Binary(arr,start,mid-1,search);
         }
     }
     return(0);
@@ -45,7 +44,7 @@ int main()
     printf("Enter the element to search in the Array:- ");
     scanf("%d",&search);
 
-    if(Binary(ptr,size,search))
+    if(Binary(ptr,0,size-1,search))
     {
         printf("Element found in the array");
         return(0);
