@@ -10,20 +10,23 @@ int* input(int arr[],int size)
     }
     return(arr);
 }
-//Insertion Sorting
-int* Insertion(int arr[],int size)
+//Selection Sorting
+int* selection(int arr[],int size)
 {
-    int i,j,key,temp;
-    for(i=1;i<size;i++)
+    int i,j,min,temp;
+    for(i=0;i<size-1;i++)
     {
-        key=arr[i];
-        j=i-1;
-        while(j>=0 && arr[j]>key)
+        min=i;
+        for(j=i+1;j<size;j++)
         {
-            arr[j+1]=arr[j];
-            j=j-1;
+            if(arr[min]>arr[j])
+            {
+                min=j;
+            }
         }
-        arr[j+1]=key;
+        temp=arr[min];
+        arr[min]=arr[i];
+        arr[i]=temp;
     }
     return(arr);
 }
@@ -49,18 +52,9 @@ int main()
     printf("Unsorted Array:-\n");
     Display(ptr,size);
 
-    Insertion( ptr, size);
+    selection( ptr, size);
     printf("Sorted Array:-\n");
     Display(ptr,size);
 
     return(0);
 }
-
-
-
-
-
-
-
-
-    

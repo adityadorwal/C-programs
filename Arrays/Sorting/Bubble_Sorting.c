@@ -1,4 +1,4 @@
- #include<stdio.h>
+#include<stdio.h>
 // Inputing Elements Of the Array
 int* input(int arr[],int size)
 {
@@ -56,12 +56,3 @@ int main()
 
     return(0);
 }
-
-
-
-
-
-
-
-
-    
